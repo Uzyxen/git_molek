@@ -23,8 +23,17 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             
-            
         </Grid>
+
+        <Label Text="Twój poprzedni dzień: "/>
+        
+        <StackLayout Orientation="Horizontal">
+            <Label x:Name="yourLastDayData"/>
+            <Label Text=" - "/>
+            <Label x:Name="yourLastDayMood"/>
+        </StackLayout>
+
+        <Button Text="Zobacz więcej danych" VerticalOptions="EndAndExpand"/>
     </StackLayout>
 
 </ContentPage>
