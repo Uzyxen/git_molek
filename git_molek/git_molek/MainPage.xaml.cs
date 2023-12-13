@@ -14,5 +14,10 @@ namespace git_molek
         {
             InitializeComponent();
         }
+
+        private void GoToDailyMoodsPage(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new DailyMoods());
+        }
     }
 }
