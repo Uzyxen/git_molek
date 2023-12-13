@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="git_molek.MainPage">
+             x:Class="git_molek.MainPage" Title="Moody">
 
     <StackLayout>
         <Label Text="Jak się dzisiaj czujesz?"
-               FontSize="20"
-               HorizontalTextAlignment="Center"/>
+               FontSize="24"
+               HorizontalTextAlignment="Center"
+               FontAttributes="Bold"
+               TextColor="Black"/>
 
         <DatePicker x:Name="selectedData" PropertyChanged="SelectedDataPropertyChanged"/>
 
@@ -25,12 +27,12 @@
             
         </Grid>
 
-        <Label Text="Twój poprzedni dzień: "/>
+        <Label Text="Twój poprzedni dzień: " FontSize="18" TextColor="Black"/>
         
         <StackLayout Orientation="Horizontal">
-            <Label x:Name="yourLastDayData"/>
-            <Label Text=" - "/>
-            <Label x:Name="yourLastDayMood"/>
+            <Label x:Name="yourLastDayData" FontSize="16" TextColor="Black"/>
+            <Label Text=" - " FontSize="16" TextColor="Black"/>
+            <Label x:Name="yourLastDayMood" FontSize="16" TextColor="Black"/>
         </StackLayout>
 
         <Button Clicked="GoToDailyMoodsPage" Text="Zobacz więcej danych" VerticalOptions="EndAndExpand"/>
