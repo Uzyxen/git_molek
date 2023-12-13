@@ -50,7 +50,7 @@ namespace git_molek
 
             if(result != null)
             {
-                yourLastDayData.Text = result.Date.ToString();
+                yourLastDayData.Text = result.Date.ToString("MM/dd/yyyy");
                 yourLastDayMood.Text = result.Mood.ToString();
             }
             else
