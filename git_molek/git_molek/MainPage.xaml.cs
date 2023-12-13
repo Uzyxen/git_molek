@@ -57,9 +57,22 @@ namespace git_molek
             }
         }
 
-        private void AddDayMoodButtonClicked(object sender, EventArgs e)
+        private async void AddDayMoodButtonClicked(object sender, EventArgs e)
         {
-           
+            if (selectedData.Date <= DateTime.Now.Date)
+            {
+                int column = Grid.GetColumn((ImageButton)sender);
+                var mood = Enum.Parse(typeof(MoodEnum), column.ToString());
+                var dayMood = new DayMood();
+                dayMood.Date = selectedData.Date;
+                dayMood.Mood = (MoodEnum)mood;
+
+                await App.Database.InsertDayMoodAsync(dayMood);
+
+                DisableButons(column);
+            }
+            else
+                await DisplayAlert("Błąd", "Nieprawidłowa data", "OK");
         }
 
         private void EnableButons()
