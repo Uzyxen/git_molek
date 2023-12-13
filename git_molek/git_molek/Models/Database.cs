@@ -20,5 +20,20 @@ namespace git_molek.Models
         {
             return _database.InsertAsync(dayMood);
         }
+
+        public Task<DayMood> GetLastDayMood()
+        {
+            return _database.Table<DayMood>().Where(d => d.Date != DateTime.Now.Date).OrderByDescending(d => d.Date).FirstOrDefaultAsync();
+        }
+
+        public Task<DayMood> GetDayMood(DateTime dateTime)
+        {
+            return _database.Table<DayMood>().Where(d => d.Date == dateTime).FirstOrDefaultAsync();
+        }
+
+        public Task<List<DayMood>> GetDayMoods()
+        {
+            return _database.Table<DayMood>().OrderByDescending(d => d.Date).ToListAsync();
+        }
     }
 }
