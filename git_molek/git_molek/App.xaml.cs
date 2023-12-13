@@ -19,7 +19,6 @@ namespace git_molek
 
                 return database;
             }
-                
         }
 
         public App()
