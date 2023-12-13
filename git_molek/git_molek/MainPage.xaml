@@ -8,7 +8,7 @@
                FontSize="20"
                HorizontalTextAlignment="Center"/>
 
-        <DatePicker x:Name="selectedData"/>
+        <DatePicker x:Name="selectedData" PropertyChanged="SelectedDataPropertyChanged"/>
 
         <Grid x:Name="buttonsGrid">
             <Grid.RowDefinitions>
