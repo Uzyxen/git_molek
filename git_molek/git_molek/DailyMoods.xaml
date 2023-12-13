@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="git_molek.DailyMoods">
     <ContentPage.Content>
-        <StackLayout>
+        <ScrollView>
             <ListView x:Name="moodsList">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -17,6 +17,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
