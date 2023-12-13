@@ -26,7 +26,7 @@ namespace git_molek
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
