@@ -96,5 +96,20 @@ namespace git_molek
                 dayMoodImageButtons[i].IsEnabled = false;
             }
         }
+
+        private async void SelectedDataPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            var dayMood = await App.Database.GetDayMood(selectedData.Date);
+
+            if (dayMood != null)
+            {
+                var column = (int)dayMood.Mood;
+                DisableButons(column);
+            }
+            else
+            {
+                EnableButons();
+            }
+        }
     }
 }
