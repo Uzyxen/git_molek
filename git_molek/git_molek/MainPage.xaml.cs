@@ -53,7 +53,13 @@ namespace git_molek
                 dayMoodImageButtons[i].Padding = 4;
                 buttonsGrid.Children.Add(dayMoodImageButtons[i]);
                 Grid.SetColumn(dayMoodImageButtons[i], i);
+                dayMoodImageButtons[i].Clicked += AddDayMoodButtonClicked;
             }
+        }
+
+        private void AddDayMoodButtonClicked(object sender, EventArgs e)
+        {
+
         }
     }
 }
