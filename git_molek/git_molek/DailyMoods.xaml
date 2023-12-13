@@ -9,7 +9,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Data}"/>
+                                <Label Text="{Binding Date, StringFormat='{0:MM/dd/yyyy}'}"/>
                                 <Label Text=" - "/>
                                 <Label Text="{Binding Mood}"/>
                             </StackLayout>
