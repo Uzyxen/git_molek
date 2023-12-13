@@ -12,7 +12,7 @@
 
         <Grid x:Name="buttonsGrid">
             <Grid.RowDefinitions>
-                <RowDefinition/>
+                <RowDefinition Height="70"/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
