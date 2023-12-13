@@ -70,6 +70,8 @@ namespace git_molek
                 Grid.SetColumn(dayMoodImageButtons[i], i);
                 dayMoodImageButtons[i].Clicked += AddDayMoodButtonClicked;
             }
+
+            LastDayDateAndMood();
         }
 
         private async void AddDayMoodButtonClicked(object sender, EventArgs e)
@@ -85,6 +87,7 @@ namespace git_molek
                 await App.Database.InsertDayMoodAsync(dayMood);
 
                 DisableButons(column);
+                LastDayDateAndMood();
             }
             else
                 await DisplayAlert("Błąd", "Nieprawidłowa data", "OK");
