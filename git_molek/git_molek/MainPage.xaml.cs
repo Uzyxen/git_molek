@@ -59,7 +59,29 @@ namespace git_molek
 
         private void AddDayMoodButtonClicked(object sender, EventArgs e)
         {
+           
+        }
 
+        private void EnableButons()
+        {
+            foreach(var button in dayMoodImageButtons)
+            {
+                button.IsEnabled = true;
+                button.BackgroundColor = Color.Transparent;
+            }
+        }
+
+        private void DisableButons(int buttonId)
+        {
+            EnableButons();
+
+            for (int i = 0; i < dayMoodImageButtons.Count; i++)
+            {
+                if (i == buttonId)
+                    dayMoodImageButtons[i].BackgroundColor = Color.LightGray;
+
+                dayMoodImageButtons[i].IsEnabled = false;
+            }
         }
     }
 }
