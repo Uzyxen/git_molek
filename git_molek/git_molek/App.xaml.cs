@@ -1,4 +1,6 @@
-﻿using System;
+﻿using git_molek.Models;
+using System;
+using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -6,6 +8,20 @@ namespace git_molek
 {
     public partial class App : Application
     {
+        static Database database;
+
+        public static Database Database 
+        {
+            get
+            {
+                if (database == null)
+                    database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "daymoods.db3"));   
+
+                return database;
+            }
+                
+        }
+
         public App()
         {
             InitializeComponent();
